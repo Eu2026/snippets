@@ -52,7 +52,6 @@ for file in files_in_dir:
 
 
 def player_turn(pref,player):
-    #pref = pref.rstrip('\n')
     if pref in word_list:
         print "Prefixul pentru cuvantul tau este: ", pref
         i = 0
@@ -92,7 +91,7 @@ while(player.fazan != 'fazan' and computer.fazan != 'fazan'):
        
        
      while True:
-           print 'Cuvantul curetnt:',cuv_curent
+           print 'Cuvantul curent:',cuv_curent
            cuv_curent = player_turn(cuv_curent[len(cuv_curent)-2:len(cuv_curent)],player)
            if cuv_curent != False:
                    cuv_curent = computer_turn(cuv_curent[len(cuv_curent)-2:len(cuv_curent)],computer)

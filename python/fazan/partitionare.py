@@ -9,7 +9,6 @@ pref1 = ""
 f = open(pref+'.txt','w')
 f.write(cuv)
 for cuv in cuvinte:
-    pref1 = cuv[0:2]
     if pref == pref1:
         f.write(cuv)
     else:
@@ -20,5 +19,8 @@ for cuv in cuvinte:
 
 print time.time() - t0
 exi = raw_input("EXIIIIT")
+
+#input("fail ")
+T")
 
 #input("fail ")

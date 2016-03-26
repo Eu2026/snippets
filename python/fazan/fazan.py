@@ -34,10 +34,12 @@ class Calculator(Player):
      def my_turn(self,pref):
         f = open(pref + '.txt','r+')
         s = 0
-        lines = []
-        for line in f:
-            lines.append(line)
+        #lines = f.readlines()
+        
+        lines = [line.rstrip('\n') for line in f]
+        
         f.seek(0)
+        
         rand = random.randrange(len(lines))
         cuv = lines[rand]
         del lines[rand]
@@ -47,32 +49,26 @@ class Calculator(Player):
         return cuv
 
 def player_turn(pref,player):
-    pref = pref.replace('\n',"")
+    pref = pref.rstrip('\n')
     try:
         f  = open(pref + '.txt','r+')
     except IOError:
         print "Ai fost incuiat, nu exista niciun cuvant care incepe cu", pref
         return False
-    lines = []
-    f.seek(0)
-    for line in f:
-        lines.append(line)
-
+    lines = [line.rstrip('\n') for line in f]
 
     print "Prefixul pentru cuvantul tau este: ", pref
     i = 0
 
     while i < 3:
         alegere = player.my_turn();
-        alegere = alegere + '\n'
-
-
+ 
         if alegere in lines:
             lines.remove(alegere)
             f.seek(0)
             for line in lines:
                 f.write(line)
-            break;
+            break
         i += 1
 
     else:
@@ -102,6 +98,7 @@ player = Player(nume)
 while(player.fazan != 'fazan' and computer.fazan != 'fazan'):
     s = random.randrange(0,300)
     k = 0
+    
     files_in_dir = os.listdir('.')
     for file_in_dir in files_in_dir:
         k = k+1
@@ -122,7 +119,7 @@ while(player.fazan != 'fazan' and computer.fazan != 'fazan'):
            print 'Cuvantul curetnt:',cuv_curent
            cuv_curent = player_turn(cuv_curent[len(cuv_curent)-3:len(cuv_curent)],player)
            if cuv_curent != False:
-                   cuv_curent = computer_turn(cuv_curent[len(cuv_curent)-3:len(cuv_curent)],computer)
+                   cuv_curent = computer_turn(cuv_curent[len(cuv_curent)-2:len(cuv_curent)],computer)
                    if cuv_curent == False:
                        computer.add_faz()
                        break

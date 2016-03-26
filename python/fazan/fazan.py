@@ -32,7 +32,7 @@ class Calculator(Player):
      def __init__(self):
          super(Calculator,self).__init__("Calculator")
      def my_turn(self,pref):
-        f = open("C:\Users\Stefan\Desktop\Fazan\cuvinte\\" + pref + '.txt','r+')
+        f = open(pref + '.txt','r+')
         s = 0
         lines = []
         for line in f:
@@ -49,7 +49,7 @@ class Calculator(Player):
 def player_turn(pref,player):
     pref = pref.replace('\n',"")
     try:
-        f  = open("C:\Users\Stefan\Desktop\Fazan\cuvinte\\" + pref + '.txt','r+')
+        f  = open(pref + '.txt','r+')
     except IOError:
         print "Ai fost incuiat, nu exista niciun cuvant care incepe cu", pref
         return False
@@ -86,7 +86,7 @@ def player_turn(pref,player):
 def computer_turn(pref,computer):
     pref = pref.replace('\n',"")
     try:
-        f  = open("C:\Users\Stefan\Desktop\Fazan\cuvinte\\" + pref + '.txt','r+')
+        f  = open(pref + '.txt','r+')
     except IOError:
         print "Felicitari, ai inchis calculatorul! ", pref
         return False
@@ -102,7 +102,7 @@ player = Player(nume)
 while(player.fazan != 'fazan' and computer.fazan != 'fazan'):
     s = random.randrange(0,300)
     k = 0
-    files_in_dir = os.listdir('C:\Users\Stefan\Desktop\Fazan\cuvinte')
+    files_in_dir = os.listdir('.')
     for file_in_dir in files_in_dir:
         k = k+1
         if k == s:

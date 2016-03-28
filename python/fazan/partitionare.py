@@ -1,6 +1,6 @@
 import time
-t0 = time.time()
 
+t0 = time.time()
 cuvinte = open('cuvinte.txt','r+')
 #alfabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y'
 cuv = cuvinte.readline()
@@ -15,6 +15,5 @@ for cuv in cuvinte:
         f = open(pref1+'.txt','w')
         pref = pref1
         f.write(cuv)
-
 print time.time() - t0
 raw_input("Check the time and press any key to exit ")

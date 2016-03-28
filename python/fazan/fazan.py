@@ -37,8 +37,8 @@ class Calculator(Player):
         word_list[pref].remove(cuv)
         return cuv
 
-files_in_dir = os.listdir('.')
-word_list  = {}
+files_in_dir = os.listdir('.')   #a list containing the names of the entries in the current directory
+word_list  = {} #a dictionary containing the words categorized by their prefixes
 for file in files_in_dir:
  
     if '.txt' in file:
@@ -80,13 +80,13 @@ player = Player(nume)
 
 while(player.fazan != 'fazan' and computer.fazan != 'fazan'):
      
-     rand1 = random.choice(word_list.keys())
-     cuv_curent = random.choice(word_list[rand1])
+     random_key = random.choice(word_list.keys())
+     cuv_curent = random.choice(word_list[random_key])
      while True:
            print 'Cuvantul curent:',cuv_curent
-           cuv_curent = player_turn(cuv_curent[len(cuv_curent)-2:len(cuv_curent)],player)
+           cuv_curent = player_turn(cuv_curent[len(cuv_curent)-2:len(cuv_curent)],player)  # -2 since there is no '\n' i have to send just the last 2 characters
            if cuv_curent != False:
-                   cuv_curent = computer_turn(cuv_curent[len(cuv_curent)-2:len(cuv_curent)],computer)
+                   cuv_curent = computer_turn(cuv_curent[len(cuv_curent)-2:len(cuv_curent)],computer)  #same thing as abobe, sending just 2 characters
                    if cuv_curent == False:
                        computer.add_faz()
                        break

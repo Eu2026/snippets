@@ -1,5 +1,6 @@
 import random
 import os
+
 class Player(object):
     def __init__(self,nume,win_turn= True, raspuns= "",fazan="",scor=1):
         self.nume = nume
@@ -27,7 +28,6 @@ class Player(object):
             self.fazan = self.fazan +'n'
         self.scor += 1
 
-
 class Calculator(Player):
      def __init__(self):
          super(Calculator,self).__init__("Calculator")
@@ -36,8 +36,6 @@ class Calculator(Player):
         cuv = random.choice(word_list[pref])
         word_list[pref].remove(cuv)
         return cuv
-
-
 
 files_in_dir = os.listdir('.')
 word_list  = {}
@@ -49,15 +47,12 @@ for file in files_in_dir:
         word_list[key] = [line.rstrip('\n') for line in g]
         
         
-
-
 def player_turn(pref,player):
     if pref in word_list:
         print "Prefixul pentru cuvantul tau este: ", pref
         i = 0
         while i < 3:
             alegere = player.my_turn();
- 
             if alegere in word_list[pref]:
                 word_list[pref].remove(alegere)
                 break
@@ -87,9 +82,6 @@ while(player.fazan != 'fazan' and computer.fazan != 'fazan'):
      
      rand1 = random.choice(word_list.keys())
      cuv_curent = random.choice(word_list[rand1])
-     
-       
-       
      while True:
            print 'Cuvantul curent:',cuv_curent
            cuv_curent = player_turn(cuv_curent[len(cuv_curent)-2:len(cuv_curent)],player)

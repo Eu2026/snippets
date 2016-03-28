@@ -16,11 +16,5 @@ for cuv in cuvinte:
         pref = pref1
         f.write(cuv)
 
-
 print time.time() - t0
-exi = raw_input("EXIIIIT")
-
-#input("fail ")
-T")
-
-#input("fail ")
+raw_input("Check the time and press any key to exit ")

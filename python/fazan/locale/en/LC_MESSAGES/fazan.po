@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 22:45+0300\n"
+"PO-Revision-Date: 2016-03-29 22:51+0200\n"
+"Last-Translator: Vlad Stefan <stefan.vlad1996@yahoo.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: fazan.py:17
+msgid "raspunsul tau: "
+msgstr "Your answer is: "
+
+#: fazan.py:42
+msgid "Calculator"
+msgstr "Computer"
+
+#: fazan.py:62
+msgid "Prefixul pentru cuvantul tau este: "
+msgstr "The prefix for your word is: "
+
+#: fazan.py:71
+msgid "Ai esuat in a gasi un cuvant, ai fost inchs! "
+msgstr "You have failed in finding a word, you lose this round! "
+
+#: fazan.py:73
+msgid "Cuvant acceptat! "
+msgstr "Word accepted! "
+
+#: fazan.py:76
+msgid "Nu exista cuvant cu acest prefix, ai fost inchis!"
+msgstr "There is no word with this prefix, you lost this round!"
+
+#: fazan.py:85
+msgid "Felicitari, m-ai inchis! "
+msgstr "Congrats, you scored!"
+
+#: fazan.py:89
+msgid "numele tau: "
+msgstr "What's your name? "
+
+#: fazan.py:97
+msgid "Cuvantul curent:"
+msgstr "Current word: "
+
+#: fazan.py:105
+msgid "Raspunsul calculatorului: "
+msgstr "Computer's answer: "

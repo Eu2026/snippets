@@ -9,8 +9,21 @@ while True:
 language = gettext.translation('fazan', localedir='locale', languages=[language_choice])
 language.install()
 
-class Player(object):
 
+class Player(object):
+    """
+    Manage the usere's actions and his score
+
+    Attributes:
+        attr1 (str): stores the player name
+        attr2 (bool): stores the last round result
+        attr3 (str): stores the answer
+        attr4 (str): the key word to end the game
+        attr5 (int): counts the lost rounds
+    Methods:
+        my_turn
+        add_faz
+    """
     def __init__(self, name, win_turn=True, answer="", fazan="", score=1):
 
         self.name = name
@@ -20,12 +33,13 @@ class Player(object):
         self.score = score
 
     def my_turn(self):
+        """Get the answer from keyboard and return it"""
 
         self.answer = raw_input(_("raspunsul tau: "))
         return self.answer
 
     def add_faz(self):
-
+        """Updates the key word based on lost rounds"""
         if self.score == 1:
             self.fazan = self.fazan + 'f'
 
@@ -44,11 +58,23 @@ class Player(object):
 
 
 class Computer(Player):
+    """
+    Inherits the Player class and manage the computer's actions and his score
+
+    Attributes:
+        Same as inherited class, but the __init__ function calls the
+        Player's __init__ with "Computer" as first parameter
+
+    Methods:
+        my_turn -- override the superclass method;
+    """
 
     def __init__(self):
         super(Computer, self).__init__(_("Calculator"))
 
     def my_turn(self, pref):
+        """Get a random word from word_list and return it"""
+
         global word_list
         random_word = random.choice(word_list[pref])
         word_list[pref].remove(random_word)
@@ -64,7 +90,13 @@ for file in files_in_dir:
 
 
 def player_turn(pref, player):
+    """Check if there is a word with the given prefix
+        and return False or the usere's answer.
 
+        Args:
+            attr1 (str): the given prefix
+            attr2 (Player): the player whoes turn is
+    """
     if pref in word_list:
         print _("Prefixul pentru cuvantul tau este: "), pref
         i = 0
@@ -85,6 +117,12 @@ def player_turn(pref, player):
 
 
 def computer_turn(pref, computer):
+    """Return False or an word with the given prefix.
+
+        Args:
+            arg1 (str): the given prefix
+            arg2 (Computer): the object whoes turn is
+    """
 
     if pref in word_list:
         choice = computer.my_turn(pref)
